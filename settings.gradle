@@ -4,6 +4,10 @@ pluginManagement {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
         }
+        maven {
+            name = 'aliyun'
+            url 'https://maven.aliyun.com/repository/gradle-plugin'
+        }
         gradlePluginPortal()
     }
 }

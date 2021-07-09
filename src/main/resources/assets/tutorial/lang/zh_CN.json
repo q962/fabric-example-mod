@@ -1,0 +1,12 @@
+{
+	"item.tutorial.fabric": "",
+	"item.tutorial.fabric_item2": "",
+	"item.tutorial.potato_shovel": "",
+	"item.tutorial.potato_sword": "",
+	"item.tutorial.potato_pickaxe": "",
+	"item.tutorial.potato_axe": "小斧头",
+	"item.tutorial.potato_axe.tooltip": "小斧头 tip",
+	"item.tutorial.potato_hoe": "小锄头",
+	"item.tutorial.potato_hoe.tooltip_1": "小锄头 tip1",
+	"item.tutorial.potato_hoe.tooltip_2": "小锄头 tip2"
+}

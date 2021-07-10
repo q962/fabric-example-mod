@@ -1,25 +1,16 @@
 package net.fabricmc.example.mixin;
 
-import net.fabricmc.example.SheepShearCallback;
 import org.spongepowered.asm.mixin.Mixin;
 
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.At;
 
-import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-
-import net.fabricmc.fabric.api.event.Event;
-import net.fabricmc.fabric.api.event.EventFactory;
+import net.fabricmc.example.event.SheepShearCallback;
 
 @Mixin(SheepEntity.class)
 public class SheepShearMixin {
@@ -39,7 +30,7 @@ public class SheepShearMixin {
         cancellable = true
     )
     private void onShear2(final PlayerEntity player, final Hand hand, final CallbackInfoReturnable<ActionResult> info) {
-        ActionResult result = SheepShearCallback.EVENT.invoker().interact(player, (SheepEntity) (Object) this);
+        /* ActionResult result = */SheepShearCallback.EVENT.invoker().interact(player, (SheepEntity) (Object) this);
 
         info.setReturnValue(ActionResult.FAIL);
     }

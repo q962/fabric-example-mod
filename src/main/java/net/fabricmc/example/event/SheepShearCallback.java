@@ -1,6 +1,4 @@
-package net.fabricmc.example;
-
-import org.spongepowered.asm.mixin.Mixin;
+package net.fabricmc.example.event;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;

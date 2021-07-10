@@ -1,6 +1,6 @@
 package net.fabricmc.example.mixin;
 
-import net.fabricmc.example.ExampleMod;
+import net.fabricmc.example.Recipe.Recipe;
 import net.minecraft.recipe.RecipeManager;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
@@ -20,8 +20,9 @@ public class RecipeManagerMixin {
 
 	@Inject(method = "apply", at = @At("HEAD"))
 	public void interceptApply(Map<Identifier, JsonElement> map, ResourceManager resourceManager, Profiler profiler, CallbackInfo info) {
-		if (ExampleMod.COPPER_PICKAXE_RECIPE != null) {
-			map.put(new Identifier("examplemod", "copper_pickaxe"), ExampleMod.COPPER_PICKAXE_RECIPE);
+		if (Recipe.COPPER_PICKAXE_RECIPE != null) {
+			// 这个id 的意义？目前的代码没有个这个相关的 id
+			map.put(new Identifier("examplemod", "copper_pickaxe"), Recipe.COPPER_PICKAXE_RECIPE);
 		}
 	}
 

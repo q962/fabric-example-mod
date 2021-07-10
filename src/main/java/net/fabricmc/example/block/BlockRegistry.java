@@ -1,6 +1,6 @@
 package net.fabricmc.example.block;
 
-import net.fabricmc.example.ExampleMod;
+import net.fabricmc.example.item.ItemRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -15,6 +15,6 @@ public class BlockRegistry {
 
 	public static void register() {
 		Registry.register(Registry.BLOCK, new Identifier("tutorial", "apple_block"), APPLE_BLOCK);
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "apple_block"), new BlockItem(APPLE_BLOCK, new FabricItemSettings().group(ExampleMod.ITEM_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier("tutorial", "apple_block"), new BlockItem(APPLE_BLOCK, new FabricItemSettings().group(ItemRegistry.ITEM_GROUP)));
 	}
 }

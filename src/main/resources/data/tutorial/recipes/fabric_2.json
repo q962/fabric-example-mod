@@ -1,20 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "WWW",
-    "WR ",
-    "WWW"
+    "  W",
+    "   ",
+    "   "
   ],
   "key": {
     "W": {
-      "item": "tutorial:fabric"
-    },
-    "R": {
-      "item": "minecraft:dirt"
+      "tag": "tutorial:b"
     }
   },
   "result": {
     "item": "tutorial:fabric",
-    "count": 4
+    "count": 6
   }
 }

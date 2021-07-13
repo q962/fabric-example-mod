@@ -28,8 +28,11 @@ public class AppleBlock extends Block {
 
 		// world.setBlockState(pos, state.with(HARDENED, true));
 		// ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0x3495eb, MY_BLOCK);
-
-		player.sendMessage(new LiteralText("Hello, world!"), false);
+		if(world.isClient() ) {
+			player.sendMessage(new LiteralText("Client: Hello, world!"), false);
+		}else {
+			player.sendMessage(new LiteralText("Server: Hello, world!"), false);
+		}
 
 		return ActionResult.SUCCESS;
 	}

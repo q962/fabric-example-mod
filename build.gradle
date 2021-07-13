@@ -15,6 +15,10 @@ allprojects {
     maven {
       url 'https://maven.aliyun.com/repository/public/'
     }
+	maven {
+        name = "Jitpack"
+        url 'https://jitpack.io/'
+    }
     mavenLocal()
     mavenCentral()
   }
@@ -39,6 +43,9 @@ dependencies {
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
+
+	// modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-entity:2.7.2"
+	// include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-entity:2.7.2"
 }
 
 processResources {

@@ -16,41 +16,47 @@ import net.minecraft.util.registry.Registry;
 
 public class ItemRegistry {
 
-	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
-		new Identifier("tutorial", "general"),
-		() -> new ItemStack(Blocks.COBBLESTONE));
+	public static final ItemGroup ITEM_GROUP;
 
-	public static final ItemGroup OTHER_GROUP = FabricItemGroupBuilder.create(
-		new Identifier("tutorial", "other"))
-		.icon(() -> new ItemStack(Items.BOWL))
-		.appendItems(stacks -> {
-			stacks.add(new ItemStack(Blocks.BONE_BLOCK));
-			stacks.add(new ItemStack(Items.APPLE));
-			// stacks.add(PotionUtil.setPotion(new ItemStack(Items.POTION), Potions.WATER));
-			stacks.add(ItemStack.EMPTY);
-			stacks.add(new ItemStack(Items.IRON_SHOVEL));
-		})
-		.build();
+	public static final ItemGroup OTHER_GROUP;
 
-	public static final Item YOUR_ITEM = new BookItem(new FabricItemSettings().group(ITEM_GROUP));
-	public static final Item YOUR_ITEM2 = new BookItem(new FabricItemSettings().group(ItemGroup.REDSTONE));
+	public static final Item YOUR_ITEM;
+	public static final Item YOUR_ITEM2;
 
-	public static final ToolItem POTATO_SHOVEL = new ShovelItem(PotatoToolMaterial.INSTANCE, 1.5F, -3.0F, new FabricItemSettings().group(ITEM_GROUP));
-	public static final ToolItem POTATO_SWORD = new SwordItem(PotatoToolMaterial.INSTANCE, 3, -2.4F, new FabricItemSettings().group(ITEM_GROUP));
+	public static final ToolItem POTATO_SHOVEL;
+	public static final ToolItem POTATO_SWORD;
+	public static final ToolItem POTATO_PICKAXE;
+	public static final ToolItem POTATO_AXE;
+	public static final ToolItem POTATO_HOE;
 
-	public static final ToolItem POTATO_PICKAXE = new CustomPickaxeItem(PotatoToolMaterial.INSTANCE, 1, -2.8F, new FabricItemSettings().group(ITEM_GROUP));
-	public static final ToolItem POTATO_AXE = new CustomAxeItem(PotatoToolMaterial.INSTANCE, 7.0F, -3.2F, new FabricItemSettings().group(ITEM_GROUP));
-	public static final ToolItem POTATO_HOE = new CustomHoeItem(PotatoToolMaterial.INSTANCE, 7, -3.2F, new FabricItemSettings().group(ITEM_GROUP));
+	static {
+		ITEM_GROUP = FabricItemGroupBuilder.build(
+			new Identifier("tutorial", "general"),
+			() -> new ItemStack(Blocks.COBBLESTONE));
+
+		OTHER_GROUP = FabricItemGroupBuilder.create(
+			new Identifier("tutorial", "other"))
+			.icon(() -> new ItemStack(Items.BOWL))
+			.appendItems(stacks -> {
+				stacks.add(new ItemStack(Blocks.BONE_BLOCK));
+				stacks.add(new ItemStack(Items.APPLE));
+				// stacks.add(PotionUtil.setPotion(new ItemStack(Items.POTION), Potions.WATER));
+				stacks.add(ItemStack.EMPTY);
+				stacks.add(new ItemStack(Items.IRON_SHOVEL));
+			})
+			.build();
+
+		YOUR_ITEM = (Item)Registry.register(Registry.ITEM, new Identifier("tutorial", "fabric"), new BookItem(new FabricItemSettings().group(ITEM_GROUP)));
+		YOUR_ITEM2 = (Item)Registry.register(Registry.ITEM, new Identifier("tutorial", "fabric_item2"), new BookItem(new FabricItemSettings().group(ItemGroup.REDSTONE)));
+
+		POTATO_SHOVEL = (ToolItem)Registry.register(Registry.ITEM, new Identifier("tutorial", "potato_shovel"), new ShovelItem(PotatoToolMaterial.INSTANCE, 1.5F, -3.0F, new FabricItemSettings().group(ITEM_GROUP)));
+		POTATO_SWORD = (ToolItem)Registry.register(Registry.ITEM, new Identifier("tutorial", "potato_sword"), new SwordItem(PotatoToolMaterial.INSTANCE, 3, -2.4F, new FabricItemSettings().group(ITEM_GROUP)));
+		POTATO_PICKAXE = (ToolItem)Registry.register(Registry.ITEM, new Identifier("tutorial", "potato_pickaxe"), new CustomPickaxeItem(PotatoToolMaterial.INSTANCE, 1, -2.8F, new FabricItemSettings().group(ITEM_GROUP)));
+		POTATO_AXE = (ToolItem)Registry.register(Registry.ITEM, new Identifier("tutorial", "potato_axe"), new CustomAxeItem(PotatoToolMaterial.INSTANCE, 7.0F, -3.2F, new FabricItemSettings().group(ITEM_GROUP)));
+		POTATO_HOE = (ToolItem)Registry.register(Registry.ITEM, new Identifier("tutorial", "potato_hoe"), new CustomHoeItem(PotatoToolMaterial.INSTANCE, 7, -3.2F, new FabricItemSettings().group(ITEM_GROUP)));
+
+	}
 
 	public static void register(){
-
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "fabric"), YOUR_ITEM);
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "fabric_item2"), YOUR_ITEM2);
-
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "potato_shovel"), POTATO_SHOVEL);
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "potato_sword"), POTATO_SWORD);
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "potato_pickaxe"), POTATO_PICKAXE);
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "potato_axe"), POTATO_AXE);
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "potato_hoe"), POTATO_HOE);
 	}
 }

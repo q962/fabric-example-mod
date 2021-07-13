@@ -6,15 +6,21 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class BlockRegistry {
 
-	public static final Block APPLE_BLOCK = new AppleBlock(FabricBlockSettings.of(Material.STONE).hardness(4.0f));
+	public static final Block APPLE_BLOCK_B;
+	public static final Item APPLE_BLOCK_I;
+
+	static {
+		Block _APPLE_BLOCK = new AppleBlock(FabricBlockSettings.of(Material.STONE).hardness(4.0f));
+		APPLE_BLOCK_B = Registry.register(Registry.BLOCK, new Identifier("tutorial", "apple_block"), _APPLE_BLOCK);
+		APPLE_BLOCK_I = Registry.register(Registry.ITEM, new Identifier("tutorial", "apple_block"), new BlockItem(_APPLE_BLOCK, new FabricItemSettings().group(ItemRegistry.ITEM_GROUP)));
+	}
 
 	public static void register() {
-		Registry.register(Registry.BLOCK, new Identifier("tutorial", "apple_block"), APPLE_BLOCK);
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "apple_block"), new BlockItem(APPLE_BLOCK, new FabricItemSettings().group(ItemRegistry.ITEM_GROUP)));
 	}
 }

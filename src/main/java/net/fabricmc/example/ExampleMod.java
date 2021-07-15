@@ -1,18 +1,12 @@
 package net.fabricmc.example;
 
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.fabricmc.example.Entity.CookieCreeperEntity;
+import net.fabricmc.example.BlockEntity.BlockEntityRegistry;
 import net.fabricmc.example.Entity.EntityRegistry;
 import net.fabricmc.example.Recipe.Recipe;
 import net.fabricmc.example.block.BlockRegistry;
 import net.fabricmc.example.loot.LootRegistry;
 import net.fabricmc.example.event.CallbackRegistry;
 import net.fabricmc.example.item.ItemRegistry;
-import net.minecraft.entity.EntityDimensions;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.fabricmc.api.ModInitializer;
 
 public class ExampleMod implements ModInitializer {
@@ -29,5 +23,6 @@ public class ExampleMod implements ModInitializer {
 		CallbackRegistry.register();
 		Recipe.create();
 		LootRegistry.register();
+		BlockEntityRegistry.register();
 	}
 }

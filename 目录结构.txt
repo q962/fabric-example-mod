@@ -1,0 +1,58 @@
+注意，各类 ID 名称相关的文件，文件名称不要使用其他内容，就使用 ID
+1. 好管理
+2. 不会出错
+	例如找不到贴图
+
+一个 block 需要 blockstates\<ID>.json 指定某种状态使用模型
+
+只有两种物体：item、block
+
+
+model 的 item、block 只能二选一
+装备栏是可以是item模型，但实际 type 是 block
+
+src\
+	main\
+		resources\
+			assets\
+				<namespace>\       命令空间
+					blockstates\  方块状态描述，什么状态使用什么模型
+						<ID>.json
+							{
+								"variants": {
+									"hardened=false": { "model": "<namespace>:block/<ID>" },
+									"hardened=true": { "model": "<namespace>:block/<ID>" }
+								}
+							}
+							or
+							默认状态
+							{
+								"variants": {
+									"": { "model": "<namespace>:block/<ID>" }
+								}
+							}
+					models\     模型描述
+						item\   分类
+							<ID>.json   id描述文件
+								//  这么做会物品栏显示的方块模型
+								{
+									"parent": "<namespace>:block/<ID>"  >> 命名空间/textures/block/<ID>.png
+								}
+								or 这么做会导致物品栏显示的item模型
+								{
+									"parent": "item/generated",
+									"textures": {
+										"layer0": "tutorial:item/fabric_item2"
+									}
+								}
+						block\  分类     https://minecraft.fandom.com/zh/wiki/%E6%A8%A1%E5%9E%8B
+							<ID>.json
+								{
+									"parent": "block/cube_all",
+									"textures": {
+									"all": "<namespace>:block/<ID>"
+									}
+								}
+					textures\   模型贴图
+						item\   分类
+						block\  分类

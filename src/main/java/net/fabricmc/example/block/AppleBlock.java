@@ -5,7 +5,6 @@ import java.util.Optional;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.serialization.MapCodec;
 
-import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;

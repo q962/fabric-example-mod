@@ -1,5 +1,6 @@
 {
 	"variants": {
-	  "": { "model": "tutorial:block/apple_block" }
+		"hardened=false": { "model": "tutorial:block/apple_block" },
+		"hardened=true": { "model": "minecraft:block/dirt" }
 	}
   }

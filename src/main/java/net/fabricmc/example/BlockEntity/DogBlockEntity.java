@@ -12,9 +12,13 @@ public class DogBlockEntity extends BlockEntity {
 	public static BlockEntityType<DogBlockEntity> BLOCK_ENTITY;
 
 	private int number = 7;
+	private BlockPos block_pos;
 
 	public DogBlockEntity(BlockPos pos, BlockState state) {
 		super(BLOCK_ENTITY, pos, state);
+		if( pos != null ){
+			this.block_pos = new BlockPos(pos);
+		}
 	}
 
 	@Override
@@ -23,6 +27,9 @@ public class DogBlockEntity extends BlockEntity {
 
 		// Save the current value of the number to the tag
 		tag.putInt("number", number);
+		if( block_pos != null ){
+			tag.putLong("block_pos", block_pos.asLong());
+		}
 
 		return tag;
 	}
@@ -31,9 +38,18 @@ public class DogBlockEntity extends BlockEntity {
 	public void readNbt(NbtCompound tag) {
 		super.readNbt(tag);
 		number = tag.getInt("number");
+		block_pos = BlockPos.fromLong(tag.getLong("block_pos"));
+	}
+
+	public void hello (){
+		if( block_pos != null ){
+			System.out.println(block_pos.toShortString());
+		} else {
+			System.out.println("pos is null");
+		}
 	}
 
 	public static void tick(World world, BlockPos pos, BlockState state, BlockEntity be) {
-		System.out.println("tick:"+be);
+		// System.out.println("tick:"+be);
 	}
 }

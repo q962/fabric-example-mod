@@ -8,7 +8,8 @@
   "client": [
     "ExampleMixin",
     "SheepShearMixin",
-    "RecipeManagerMixin"
+    "RecipeManagerMixin",
+    "ArmorItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

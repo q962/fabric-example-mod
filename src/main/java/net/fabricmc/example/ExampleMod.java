@@ -2,6 +2,7 @@ package net.fabricmc.example;
 
 import net.fabricmc.example.BlockEntity.BlockEntityRegistry;
 import net.fabricmc.example.Entity.EntityRegistry;
+import net.fabricmc.example.Material.MaterialRegistry;
 import net.fabricmc.example.Recipe.Recipe;
 import net.fabricmc.example.block.BlockRegistry;
 import net.fabricmc.example.loot.LootRegistry;
@@ -24,5 +25,6 @@ public class ExampleMod implements ModInitializer {
 		Recipe.create();
 		LootRegistry.register();
 		BlockEntityRegistry.register();
+		MaterialRegistry.register();
 	}
 }

@@ -1,9 +1,6 @@
 package net.fabricmc.example.Entity;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.mob.*;
-import net.minecraft.entity.mob.CreeperEntity;
-// import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.world.World;
 
 public class ZombieEntity extends net.minecraft.entity.mob.ZombieEntity  {

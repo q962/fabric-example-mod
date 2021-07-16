@@ -8,7 +8,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class BookItem extends Item{
+public class BookItem extends Item {
 
 	public BookItem(Settings settings) {
 		super(settings);

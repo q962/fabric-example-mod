@@ -15,21 +15,11 @@ import net.fabricmc.example.event.SheepShearCallback;
 @Mixin(SheepEntity.class)
 public class SheepShearMixin {
 
-    // @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/SheepEntity;sheared(Lnet/minecraft/sound/SoundCategory;)V"),
-    //     method = "interactMob(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResult;", cancellable = true)
-    // private void onShear2(final PlayerEntity player, final Hand hand, final CallbackInfoReturnable<Boolean> info) {
-    //     ActionResult result = SheepShearCallback.EVENT.invoker().interact(player, (SheepEntity) (Object) this);
-
-    //     if(result == ActionResult.FAIL) {
-    //         info.cancel();
-    //     }
-    // }
-
     @Inject(at = @At(value = "RETURN", ordinal = 0),
         method = "interactMob(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResult;",
         cancellable = true
     )
-    private void onShear2(final PlayerEntity player, final Hand hand, final CallbackInfoReturnable<ActionResult> info) {
+    private void onShear(final PlayerEntity player, final Hand hand, final CallbackInfoReturnable<ActionResult> info) {
         /* ActionResult result = */SheepShearCallback.EVENT.invoker().interact(player, (SheepEntity) (Object) this);
 
         info.setReturnValue(ActionResult.FAIL);

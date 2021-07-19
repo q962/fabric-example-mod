@@ -9,7 +9,8 @@
     "ExampleMixin",
     "SheepShearMixin",
     "RecipeManagerMixin",
-    "ArmorItemMixin"
+    "ArmorItemMixin",
+    "DefaultAttributeRegistryMixin"
   ],
   "injectors": {
     "defaultRequire": 1

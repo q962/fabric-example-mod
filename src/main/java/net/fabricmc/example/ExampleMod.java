@@ -1,15 +1,15 @@
 package net.fabricmc.example;
 
+import net.fabricmc.api.ModInitializer;
 import net.fabricmc.example.BlockEntity.BlockEntityRegistry;
+import net.fabricmc.example.Command.CommandRegistry;
 import net.fabricmc.example.Entity.EntityRegistry;
 import net.fabricmc.example.Material.MaterialRegistry;
 import net.fabricmc.example.Recipe.Recipe;
 import net.fabricmc.example.block.BlockRegistry;
-import net.fabricmc.example.Command.CommandRegistry;
-import net.fabricmc.example.loot.LootRegistry;
 import net.fabricmc.example.event.CallbackRegistry;
 import net.fabricmc.example.item.ItemRegistry;
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.example.loot.LootRegistry;
 
 public class ExampleMod implements ModInitializer {
 

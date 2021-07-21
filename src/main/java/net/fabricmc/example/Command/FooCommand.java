@@ -1,7 +1,7 @@
 package net.fabricmc.example.Command;
 
 import com.mojang.brigadier.CommandDispatcher;
-import net.fabricmc.example.Entity.CookieCreeperModelBuilder;
+import net.fabricmc.example.Entity.CookieCreeperEntityModelBuilder;
 import net.fabricmc.example.Entity.ZombieEntityModelBuilder;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.server.command.CommandManager;
@@ -15,7 +15,7 @@ public class FooCommand implements CommandRegistrationCallback {
     public void register(CommandDispatcher<ServerCommandSource> dispatcher, boolean dedicated) {
         dispatcher.register(CommandManager.literal("foo").executes(context -> {
 
-            CookieCreeperModelBuilder.CONFIG.read();
+            CookieCreeperEntityModelBuilder.CONFIG.read();
             ZombieEntityModelBuilder.CONFIG.read();
 
             System.out.println("cookie_creeper_"+count++);

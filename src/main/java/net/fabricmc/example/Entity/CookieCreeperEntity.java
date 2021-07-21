@@ -6,10 +6,9 @@ import net.minecraft.world.World;
 
 public class CookieCreeperEntity extends CreeperEntity  {
 
-	public CookieCreeperEntity(EntityType<? extends CreeperEntity> entityType, World world) {
+	public CookieCreeperEntity(EntityType<? extends CookieCreeperEntity> entityType, World world) {
 		super(entityType, world);
 
 		System.out.println("CookieCreeperEntity");
 	}
-
 }
